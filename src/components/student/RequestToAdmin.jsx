@@ -37,13 +37,14 @@ export default function RequestToAdmin() {
     });
     const messageObject={to_username: "admin01", from_username:username, message: message};
     useEffect(()=>{
-         console.log("helllo buddy")
+         const sendMessage = async() => {
+            console.log("helllo buddy")
          try{
          if (user) {
             console.log("inside socket functionality");
             const socket= getSocketInstance();
-         socket.connect();
-        socket.emit("message_sent", messageObject);
+         await socket.connect();
+        await socket.emit("message_sent", messageObject);
 
          toast.success("Message sent")
          // console.log(state);
@@ -52,12 +53,14 @@ export default function RequestToAdmin() {
          //save message within the database
          const response = axios.post(`${PORT}/api/anonymous/reset_password_message`, messageObject);
          console.log("Message is being saved");
-         socket.emit("disconnect");
+         await socket.emit("disconnect");
          }
         }catch(error){
             toast.error("Failed to send Message");
             console.log("message failed to save");
         }
+         }
+         sendMessage();
     }, [user])
 
     const onSubmit = async () => {
