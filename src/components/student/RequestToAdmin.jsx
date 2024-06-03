@@ -55,6 +55,7 @@ export default function RequestToAdmin() {
          console.log("Message is being saved");
          await socket.connect();
          await socket.emit("disconnect");
+         console.log("below req admin disconnect")
          }
         }catch(error){
             toast.error("Failed to send Message");
