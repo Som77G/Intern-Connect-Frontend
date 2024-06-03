@@ -53,6 +53,7 @@ export default function RequestToAdmin() {
          //save message within the database
          const response = axios.post(`${PORT}/api/anonymous/reset_password_message`, messageObject);
          console.log("Message is being saved");
+         await socket.connect();
          await socket.emit("disconnect");
          }
         }catch(error){
