@@ -1,19 +1,19 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UseSocketSetup from "../../hooks/UseSocketSetup";
+// import UseSocketSetup from "../../hooks/UseSocketSetup";
 import { useMessageContext } from "../../hooks/useMessageContext";
 import AdminNavbar from "./AdminNavbar";
 import { useNewMessageContext } from "../../hooks/useNewMessageContext";
 import { useAdminContext } from "../../hooks/useAdminContext";
 import SearchStudent from "./SearchStudent";
-import AdminHeader from "./AdminHeader";
+// import AdminHeader from "./AdminHeader";
 import AddStudent from "./AddStudent";
 // export const HasNewMessageContext= createContext();
 export default function AdminHomePage() {
     return (
         <>
             {/* <HasNewMessageContext.Provider value= {{hasNewMessage, setHasNewMessage}}> */}
-            <AdminHeader/>
+            {/* <AdminHeader/> */}
 
             <section className=" flex flex-col md:flex-row lg:flex-row py-1 bg-blueGray-50">
                 <AdminNavbar />

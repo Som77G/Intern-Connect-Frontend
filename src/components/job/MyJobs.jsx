@@ -121,7 +121,7 @@ import { useAdminContext } from "../../hooks/useAdminContext";
 import { useNavigate } from "react-router-dom";
 import { FaCheck } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
-import AdminHeader from "../admin/AdminHeader";
+// import AdminHeader from "../admin/AdminHeader";
 import AdminNavbar from "../admin/AdminNavbar";
 import { useMyJobsContext } from "../../hooks/useMyJobsContext";
 
@@ -232,7 +232,7 @@ export default function MyJobs() {
 
     return (
         <>
-            <AdminHeader />
+            {/* <AdminHeader /> */}
             <section className="flex flex-col md:flex-row lg:flex-row py-1 bg-blueGray-50">
                 <AdminNavbar />
                 
