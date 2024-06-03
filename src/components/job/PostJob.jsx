@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useAdminContext } from "../../hooks/useAdminContext";
 import { useNavigate } from "react-router-dom";
-// import AdminHeader from "../admin/AdminHeader";
+import AdminHeader from "../admin/AdminHeader";
 import AdminNavbar from "../admin/AdminNavbar";
 import { useJobsContext } from "../../hooks/useJobsContext";
 import { useMyJobsContext } from "../../hooks/useMyJobsContext";
@@ -155,7 +155,7 @@ export default function PostJob() {
     return (
         <>
         
-        {/* <AdminHeader/> */}
+        <AdminHeader/>
         <section className="flex flex-col md:flex-row lg:flex-row py-1 bg-blueGray-50">
         <AdminNavbar/>
         <div className=" min-h-screen flex items-center flex-wrap w-full justify-center bg-zinc-900 py-12 px-4 sm:px-6 lg:px-8">

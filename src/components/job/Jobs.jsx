@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useAdminContext } from "../../hooks/useAdminContext";
 import axios from "axios";
-// import AdminHeader from "../admin/AdminHeader";
+import AdminHeader from "../admin/AdminHeader";
 import AdminNavbar from "../admin/AdminNavbar";
 import StudentHeader from "../student/StudentHeader";
 import AsideBar from "../student/AsideBar";
@@ -39,7 +39,7 @@ export default function Jobs() {
     console.log("Jobs array:", jobs);
     return (
         <>
-            {/* {user.userType == 'admin' ? <AdminHeader/> : <StudentHeader/>} */}
+            {user.userType == 'admin' ? <AdminHeader/> : <StudentHeader/>}
         
             <section className="flex flex-col md:flex-row lg:flex-row py-1 bg-blueGray-50">
             {user.userType == 'admin' ? <AdminNavbar/> : <AsideBar/>}
