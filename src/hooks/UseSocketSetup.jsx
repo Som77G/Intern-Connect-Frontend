@@ -31,7 +31,7 @@ const UseSocketSetup = () => {
     if (user)
       // toast.success("Message sent")
     console.log("deleting from  map")
-    socket.emit("disconnect")
+    socket.emit("deleteUser")
     userDispatch({type : 'LOGOUT'});
     
     return
