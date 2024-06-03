@@ -1,11 +1,13 @@
 import { io } from "socket.io-client";
 import { useAdminContext } from "./hooks/useAdminContext";
+const PORT = import.meta.env.VITE_DOMAIN;
+
 let socket; // Declare a variable to store the socket instance
 
 const createSocketInstance = () => {
   const {user}= useAdminContext();
 
-  return io("http://localhost:3000", {
+  return io(`${PORT}`, {
     autoConnect: false,
     withCredentials: true,
     query: {
