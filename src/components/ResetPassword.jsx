@@ -138,7 +138,7 @@ export default function ResetPassword() {
                                         onChange={(e) => setConfirmPassword(e.target.value)}
                                         type="password"
                                         required
-                                        placeholder="consfirm Password" />
+                                        placeholder="confirm Password" />
 
                                 </div>
 

@@ -43,7 +43,8 @@ export default function RequestToAdmin() {
             console.log("inside socket functionality");
             const socket= getSocketInstance();
          socket.connect();
-         socket.emit("message_sent", messageObject);
+        socket.emit("message_sent", messageObject);
+
          toast.success("Message sent")
          // console.log(state);
          console.log("Running")
@@ -51,6 +52,7 @@ export default function RequestToAdmin() {
          //save message within the database
          const response = axios.post(`${PORT}/api/anonymous/reset_password_message`, messageObject);
          console.log("Message is being saved");
+         socket.emit("disconnect");
          }
         }catch(error){
             toast.error("Failed to send Message");
