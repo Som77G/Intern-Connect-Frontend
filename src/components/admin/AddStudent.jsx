@@ -36,7 +36,7 @@ export default function AddStudent() {
             console.log(data);
         } catch (error) {
             toast.error("Student already exists");
-            console.log("error in adding student: ", error.message);
+            console.log("error in adding student: ", error);
         }
         finally {
             setSubmitting(false);
