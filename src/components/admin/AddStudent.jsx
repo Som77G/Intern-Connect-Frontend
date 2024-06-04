@@ -63,7 +63,7 @@ export default function AddStudent() {
                                             // id="username"
                                             // value={username}
                                             {...register("username")}
-                                            onChange={(e) => setUsername(e.target.value)} className="w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Registration Number" />
+                                            onChange={(e) => setUsername(e.target.value)} className="text-black w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Registration Number" />
                                         {errors && errors.username && (
                                             <p className="text-red-500 text-xs bold mt-1">
                                                 <span className="inline-block bg-red-200 text-red-700 rounded-full px-2 py-1">
@@ -86,7 +86,7 @@ export default function AddStudent() {
                                             // value={password}
                                             {...register("password")}
                                             onChange={(e) => setPassword(e.target.value)}
-                                            className="w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Dummy Password" />
+                                            className="text-black w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Dummy Password" />
                                         {errors && errors.password && (
                                             <p className="text-red-500 text-xs bold mt-1">
                                                 <span className="inline-block bg-red-200 text-red-700 rounded-full px-2 py-1">
@@ -109,7 +109,7 @@ export default function AddStudent() {
                                         type="email"
                                         // value={email}
                                         {...register("email")}
-                                        onChange={(e) => setEmail(e.target.value)} className="w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Test@123@gmail.com" />
+                                        onChange={(e) => setEmail(e.target.value)} className="text-black w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Test@123@gmail.com" />
                                     {errors && errors.email && (
                                         <p className="text-red-500 text-xs bold mt-1">
                                             <span className="inline-block bg-red-200 text-red-700 rounded-full px-2 py-1">
