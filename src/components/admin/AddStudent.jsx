@@ -35,7 +35,7 @@ export default function AddStudent() {
             toast.success("Student added successfully!");
             console.log(data);
         } catch (error) {
-            toast.error(error.message);
+            toast.error(error.data.data.message);
             console.log("error in adding student: ", error.message);
         }
         finally {
