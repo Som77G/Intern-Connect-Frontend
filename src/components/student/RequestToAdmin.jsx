@@ -150,6 +150,7 @@ export default function RequestToAdmin() {
                             {errors && errors.message && (
                                 <p className="text-red-500 text-xs italic">{errors.message.message}</p>
                             )}
+                            <h3 className="mb-2 text-gray-400">{submitting? <i>Processing...</i> : ""}</h3>
                             <div className="my-2 w-1/2 lg:w-1/4">
                                 <button className="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
                           focus:outline-none focus:shadow-outline"

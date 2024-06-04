@@ -22,7 +22,9 @@ export default function Profile() {
         resume: null
     })
     
-    const [submitting, setSubmitting] = useState(false)
+    const [profileSubmitting, setProfileSubmitting] = useState(false)
+    const [resumeSubmitting, setResumeSubmitting] = useState(false)
+    const [formSubmitting, setFormSubmitting] = useState(false)
     const [studentProfile, setStudentProfile] = useState({
         profilecreated : loginUser.profileCreated,
         userid : loginUser.userid,
@@ -59,7 +61,7 @@ export default function Profile() {
 
     const uploadPicture = async () => {
         try {
-            setSubmitting(true)
+            setProfileSubmitting(true)
             const formData = new FormData()
 
             formData.append('profilePicture', docs.profilePicture);
@@ -79,13 +81,13 @@ export default function Profile() {
             toast.error("Error in uploading Profile Picture")
             console.log('Error in uploading files', error)
         } finally {
-            setSubmitting(false)
+            setProfileSubmitting(false)
         }
     }
 
     const uploadResume = async () => {
         try {
-            setSubmitting(true)
+            setResumeSubmitting(true)
             console.log(docs.resume)
             const formData = new FormData()
 
@@ -105,12 +107,12 @@ export default function Profile() {
             toast.error("Error in uploading Resume")
             console.log('Error in uploading files', error)
         } finally {
-            setSubmitting(false)
+            setResumeSubmitting(false)
         }
     }
     const onUpdate = async () => {
         try {
-            setSubmitting(true)
+            setFormSubmitting(true)
             const response = await axios.put(`${PORT}/api/student/updateProfile`, studentProfile)
             console.log("Profile Updated", response)
             toast.success(response.data.message)
@@ -124,7 +126,7 @@ export default function Profile() {
             toast.error("Error in Updating Profile")
             console.log("error in updating profile", error)
         } finally {
-            setSubmitting(false)
+            setFormSubmitting(false)
         }
     }
     
@@ -270,12 +272,12 @@ export default function Profile() {
                                     {/* button to upload file */}
 
                                 </div>
-                                <h3 className="mb-2 text-gray-400">{submitting? <i>Processing...</i> : ""}</h3>
+                                <h3 className="mb-2 text-gray-400">{profileSubmitting? <i>Processing...</i> : ""}</h3>
 
                                 <button
                                     className=" bg-yellow-500 text-zinc-900 font-semibold py-2 mt-2 ml-4 px-6 rounded-2xl hover:bg-yellow-600"
                                     onClick={uploadPicture}
-                                    disabled={submitting}>Upload</button>
+                                    disabled={profileSubmitting}>Upload</button>
                                 <hr className="mt-6 border-b-1 border-blueGray-300" />
 
                                 <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">Academic Information</h6>
@@ -306,13 +308,13 @@ export default function Profile() {
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 className="mb-2 text-gray-400">{submitting? <i>Processing...</i> : ""}</h3>
+                                    <h3 className="mb-2 text-gray-400">{resumeSubmitting? <i>Processing...</i> : ""}</h3>
 
                                     <div className='w-full'>
                                         <button
                                             className=" bg-yellow-500 text-zinc-900 font-semibold py-2 mt-2 mb-10 ml-4 px-6 rounded-2xl hover:bg-yellow-600"
                                             onClick={uploadResume}
-                                            disabled={submitting}>Upload</button>
+                                            disabled={resumeSubmitting}>Upload</button>
                                     </div>
 
 
@@ -546,12 +548,12 @@ export default function Profile() {
                                 </div>
 
                                 <hr className="mt-6 border-b-1 border-blueGray-300" />
-                                <h3 className="mb-2 text-gray-400">{submitting? <i>Processing...</i> : ""}</h3>
+                                <h3 className="mb-2 text-gray-400">{formSubmitting? <i>Processing...</i> : ""}</h3>
 
                                 <button
                                     className=" bg-yellow-500 text-zinc-900 font-semibold py-2 mt-10 px-6 rounded-2xl hover:bg-yellow-600"
                                     onClick={onUpdate}
-                                    disabled = {submitting}>Update Profile</button>
+                                    disabled = {formSubmitting}>Update Profile</button>
 
 
                             </div>

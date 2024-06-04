@@ -26,9 +26,9 @@ export default function StudentDashboard() {
       demoLink: profile.project1_demo_link
     }
     project2 = {
-      githubLink: profile.project1_github_link,
-      projectLink: profile.project1_project_link,
-      demoLink: profile.project1_demo_link
+      githubLink: profile.project2_github_link,
+      projectLink: profile.project2_project_link,
+      demoLink: profile.project2_demo_link
     }
   }
   
@@ -65,8 +65,8 @@ export default function StudentDashboard() {
           <div className="border-l my-4 border-stone-500"></div>
           <div className="w-2/5 mt-8 ">
             
-            <div className="w-full"><ShowProjects project={project1} /></div>
-            <div className="w-full"><ShowProjects project={project2} /></div>
+            <div className="w-full"><ShowProjects project={project1} number = {1} /></div>
+            <div className="w-full"><ShowProjects project={project2} number = {2}/></div>
             <div className="mx-4 mt-8 flex justify-center items-center h-96">
               <iframe className="w-full h-full border-none" src={profile.resume}></iframe>
             </div>
